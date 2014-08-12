@@ -8,7 +8,7 @@ var server = http.createServer(function(req, res) {
     var ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
     console.log(ip, req.method, req.url);
     var pathname = req.url.replace(/^\//, '');
-    if (pathname === '') {
+    if ((pathname === '') || pathname === 'favicon.ico') {
         return res.end();
     }
     var headers = {
