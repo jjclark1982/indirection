@@ -1,0 +1,14 @@
+{
+  "name": "indirection",
+  "version": "0.0.0",
+  "description": "url redirection service",
+  "main": "server.coffee",
+  "dependencies": {
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "WTFPL"
+}
