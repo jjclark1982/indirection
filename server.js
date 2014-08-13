@@ -12,10 +12,10 @@ var server = http.createServer(function(req, res) {
         return res.end();
     }
     var headers = {
-        "Content-Type": "text/html"
+        "Refresh": "0; url="+pathname
     };
     res.writeHead(200, headers);
-    res.end('<meta http-equiv="refresh" content="0; url='+pathname+'" />')
+    res.end()
 });
 
 server.once('listening', function() {
