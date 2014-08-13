@@ -8,14 +8,14 @@ var server = http.createServer(function(req, res) {
     var ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
     console.log(ip, req.method, req.url);
     var pathname = req.url.replace(/^\//, '');
-    if ((pathname === '') || pathname === 'favicon.ico') {
+    if (!pathname.match(/:/)) {
         return res.end();
     }
     var headers = {
-        "Location": pathname || ''
+        "Content-Type": "text/html"
     };
-    res.writeHead(302, headers);
-    res.end("Redirecting you to "+pathname);
+    res.writeHead(200, headers);
+    res.end('<meta http-equiv="refresh" content="0; url='+pathname+'" />')
 });
 
 server.once('listening', function() {
