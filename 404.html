@@ -1,0 +1,13 @@
+<!doctype html>
+<html>
+<head>
+    <script type="text/javascript">
+        var url = document.location.pathname.substring(1).replace(/%20/g,' ');
+        if (url.match(/:/)) {
+            document.location.replace(url);
+        }
+    </script>
+</head>
+<body>
+</body>
+</html>
